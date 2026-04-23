@@ -61,9 +61,9 @@ The model successfully generalizes across various receipt layouts. Below are exa
 * **Red:** TOTAL
 
 <p align="center">
-  <img src="result_X51006856982.jpg" width="32%" />
-  <img src="result_X51006647933.jpg" width="32%" />
-  <img src="result_X51009453729.jpg" width="32%" />
+  <img src="assets/result_X51006856982.jpg" width="32%" />
+  <img src="assets/result_X51006647933.jpg" width="32%" />
+  <img src="assets/result_X51009453729.jpg" width="32%" />
 </p>
 
 ---
@@ -141,9 +141,9 @@ Evaluation was performed on **168 test images**. The results below reflect the m
 The following visualizations show the model's output. Note how the model maps visual regions directly to JSON fields.
 
 <p align="center">
-  <img src="result_X51006554841.jpg" width="32%" />
-  <img src="result_X51006555833.jpg" width="32%" />
-  <img src="result_X51006619784.jpg" width="32%" />
+  <img src="assets/result_X51006554841.jpg" width="32%" />
+  <img src="assets/result_X51006555833.jpg" width="32%" />
+  <img src="assets/result_X51006619784.jpg" width="32%" />
 </p>
 
 ###  Common Error Patterns (Why it fails):
