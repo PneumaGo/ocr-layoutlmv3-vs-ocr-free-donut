@@ -173,17 +173,18 @@ With an overall **Average Similarity of 94.66%**, the model proves that even wit
 
 This section provides a definitive performance and architectural comparison between the two implemented models.
 
-##  Comparative Performance Matrix
+###  Comparative Performance Matrix
 
-| Metric | LayoutLMv3 | Donut (OCR-Free) | Winner |
-| :--- | :--- | :--- | :--- |
-| **Global F1-Score** | **0.9409** | ~0.9000 (Estimated) | **LayoutLMv3** |
-| **Total (Accuracy)** | **~89%** | 87.50% | **LayoutLMv3** |
-| **Date (Accuracy)** | **98.00%** | 89.88% | **LayoutLMv3** |
-| **Inference Speed** | **Fast** (Token Class.) | Slow (Auto-regressive) | **LayoutLMv3** |
-| **Hardware Demand** | **Low** (Base model) | High (Large memory) | **LayoutLMv3** |
-| **Data Dependency** | Real OCR data | **Synthetic + Real** | **Donut (Flexibility)** |
-
+| Metric / Category | LayoutLMv3 (OCR-Based) | Donut (OCR-Free) | Winner | Key Insight |
+| :--- | :---: | :---: | :---: | :--- |
+| **Global F1-Score** | **0.9409** | ~0.9000 | **LayoutLMv3** | High spatial precision wins on SROIE dataset. |
+| **Company Accuracy** | **0.9424 (F1)** | 82.74% (Exact Match) | **LayoutLMv3** | Donut occasionally struggles with long entity names. |
+| **Date Accuracy** | **0.9879 (F1)** | 89.88% (Exact Match) | **LayoutLMv3** | LayoutLM is nearly perfect on standardized dates. |
+| **Total Accuracy** | **0.8945 (F1)** | 87.50% (Exact Match) | **LayoutLMv3** | Competitive performance from both models. |
+| **Avg. Similarity** | N/A | **94.66%** | **Donut** | Donut understands "semantics" despite minor typos. |
+| **Inference Speed** | **Fast** (Parallel) | Slow (Sequential) | **LayoutLMv3** | LayoutLM is better suited for real-time apps. |
+| **Hardware Demand** | **Low** (Base model) | High (VRAM intensive) | **LayoutLMv3** | Donut requires significantly more GPU memory. |
+| **OCR Dependency** | Required | **None** | **Donut** | Donut eliminates 3rd party OCR costs & complexity. |
 ---
 
 ##  Deep Dive: Why LayoutLMv3 Outperformed Donut
