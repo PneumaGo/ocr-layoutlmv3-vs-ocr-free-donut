@@ -202,22 +202,25 @@ Donut is an end-to-end vision model. To prevent GPU memory (VRAM) overflow, rece
 
 ---
 
-## 🏁 Final Conclusion & Selection Guide
+##  Final Conclusion & Selection Guide
 
-### **Decision: Choose LayoutLMv3**
-**LayoutLMv3 is the clear winner for the SROIE task.** * **Why:** It yields a higher F1-score (**0.9409**), processes images faster, and is significantly more stable in high-stakes fields like **Date** and **Total**.
-* **Best for:** Production environments where OCR data is available and speed/accuracy are critical.
+###  The Winner: LayoutLMv3
+**LayoutLMv3** is the clear winner for the SROIE task and production-ready applications.
+* **Why:** It yields a significantly higher **F1-score (0.9409)**, processes images faster, and is remarkably stable in extracting high-stakes fields like **Date** and **Total**.
+* **Best for:** Production environments where OCR data is available and speed/accuracy are critical requirements.
 
-### **Decision: Choose Donut**
-**Donut is the better choice for OCR-free research.**
-* **Why:** It eliminates the need for an external OCR engine, which simplifies the pipeline and reduces costs in the long run. Its **94.66% Average Similarity** shows it understands document semantics very well, even if it misses exact character matches.
-* **Best for:** Documents where OCR engines fail (handwriting, stylized fonts) or when building a purely generative AI document assistant.
+###  The Alternative: Donut
+**Donut** is the superior choice for OCR-free research and non-standard document types.
+* **Why:** It eliminates the need for an external OCR engine, simplifying the pipeline and reducing long-term costs. While it struggles with exact character matches on small datasets, its **94.66% Average Similarity** proves it deeply understands document semantics.
+* **Best for:** Documents where standard OCR engines fail (handwriting, stylized fonts, artistic layouts) or when building purely generative AI document assistants.
 
-### **Project Summary**
-This project confirms that for structured document extraction with provided layout data, **LayoutLMv3** remains the industry standard. However, **Donut**'s ability to learn from a mix of 600 real and 1,000 synthetic samples without an OCR engine shows its massive potential for future scaling, provided that hardware constraints (VRAM) are managed via sliding-window inference or higher-end GPUs.
+---
 
-### **Recommendation: Choose Donut**
-If you want to build an **OCR-free pipeline** to save on third-party OCR costs or if your documents are highly stylized (e.g., artistic menus or handwritten notes) where standard OCR engines fail. Despite the hardware demands, its **94.66% Average Similarity** shows it understands the document's meaning deeply.
+##  Project Summary & Future Outlook
 
-### **Project Summary**
-For this specific implementation, **LayoutLMv3 is the superior choice** due to its stability and higher accuracy in extracting critical financial data like "Total" and "Date". To further improve both models, the next step should involve expanding the dataset to 2,000+ real samples and implementing a **sliding-window** inference technique to preserve high-resolution text features.
+This benchmark confirms that for structured document extraction with provided layout data, **LayoutLMv3** remains the industry standard. However, **Donut’s** ability to learn from a small mix of real and synthetic samples without an OCR engine shows massive potential for future scaling.
+
+###  Key Takeaways for Improvement:
+1. **Scaling Data:** Expanding the dataset to **2,000+ real-world samples** to improve model generalization.
+2. **Resolution Management:** Implementing **sliding-window inference** for Donut to preserve high-resolution text features while managing VRAM constraints.
+3. **Hybrid Approaches:** Exploring the use of modern, lightweight OCR engines (like PaddleOCR) to further boost LayoutLMv3’s input quality in "messy" real-world scenarios.
